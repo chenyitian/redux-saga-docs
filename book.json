@@ -1,0 +1,27 @@
+{
+  "gitbook": "2.5.2",
+  "structure": {
+    "summary": "docs/README.md"
+  },
+  "plugins": ["edit-link", "prism", "-highlight", "ga"],
+  "pluginsConfig": {
+    "edit-link": {
+      "base": "https://github.com/superRaytin/redux-saga-in-chinese/tree/master",
+      "label": "开始纠错"
+    },
+    "ga": {
+      "token": "UA-58588801-2"
+    },
+    "github": {
+      "url": "https://github.com/superRaytin/redux-saga-in-chinese/"
+    },
+    "sharing": {
+      "facebook": true,
+      "twitter": true,
+      "google": true,
+      "weibo": true,
+      "instapaper": false,
+      "vk": false
+    }
+  }
+}
