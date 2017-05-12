@@ -120,7 +120,7 @@ LOGOUT.................................................. missed!
 
 所以我们需要的是一些非阻塞调用 `authorize` 的方法。这样 `loginFlow` 就可以继续执行，并且监听并发的或响应未完成之前发出的 `LOGOUT` action。
 
-为了表示无阻塞调用，redux-saga 提供了另一个 Effect：[`fork`](http://leonshi.com/redux-saga-in-chinese/docs/api/index.html#forkfn-args)。
+为了表示无阻塞调用，redux-saga 提供了另一个 Effect：[`fork`](/api/index.html#forkfn-args)。
 当我们 fork 一个 *任务*，任务会在后台启动，调用者也可以继续它自己的流程，而不用等待被 fork 的任务结束。
 
 所以为了让 `loginFlow` 不错过一个并发的 `LOGOUT`，我们不应该使用 `call` 调用 `authorize` 任务，而应该使用 `fork`。
@@ -183,7 +183,7 @@ function* loginFlow() {
 但是还没完。如果我们在 Api 调用期间收到一个 `LOGOUT` action，我们必须要 **取消** `authorize` 处理进程，否则将有 2 个并发的任务，
 并且 `authorize` 任务将会继续运行，并在成功的响应（或失败的响应）返回后发起一个 `LOGIN_SUCCESS` action（或一个 `LOGIN_ERROR` action），而这将导致状态不一致。
 
-为了取消 fork 任务，我们可以使用一个指定的 Effect [`cancel`](http://superRaytin.github.io/redux-saga-in-chinese/docs/api/index.html#canceltask)。
+为了取消 fork 任务，我们可以使用一个指定的 Effect [`cancel`](/api/index.html#canceltask)。
 
 ```javascript
 import { take, put, call, fork, cancel } from 'redux-saga/effects'
@@ -203,7 +203,7 @@ function* loginFlow() {
 }
 ```
 
-`yield fork` 的返回结果是一个 [Task 对象](http://superRaytin.github.io/redux-saga-in-chinese/docs/api/index.html#task)。
+`yield fork` 的返回结果是一个 [Task 对象](/api/index.html#task)。
 我们将它们返回的对象赋给一个本地常量 `task`。如果我们收到一个 `LOGOUT` action，我们将那个 task 传入给 `cancel` Effect。
 如果任务仍在运行，它会被中止。如果任务已完成，那什么也不会发生，取消操作将会是一个空操作（no-op）。最后，如果该任务完成了但是有错误，
 那我们什么也没做，因为我们知道，任务已经完成了。

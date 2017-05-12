@@ -15,7 +15,7 @@ redux-saga 通过创建 *Sagas* 将所有的异步操作逻辑收集在一个地
 
 - Sagas 负责协调那些复杂或异步的操作。
 
-Sagas 是通过 Generator 函数来创建的。如果你还不熟悉 Generator，可以在这里找到 [一些有用的链接](http://superRaytin.github.io/redux-saga-in-chinese/docs/ExternalResources.html)。
+Sagas 是通过 Generator 函数来创建的。如果你还不熟悉 Generator，可以在这里找到 [一些有用的链接](/ExternalResources.html)。
 
 Sagas 不同于 Thunks，Thunks 是在 action 被创建时调用，而 Sagas 只会在应用启动时调用（但初始启动的 Sagas 可能会动态调用其他 Sagas）。
 Sagas 可以被看作是在后台运行的进程。Sagas 监听发起的 action，然后决定基于这个 action 来做什么：是发起一个异步调用（比如一个 Ajax 请求），还是发起其他的 action 到 Store，甚至是调用其他的 Sagas。
@@ -113,14 +113,14 @@ const store = createStore(
 
 # 文档
 
-- [介绍](http://superRaytin.github.io/redux-saga-in-chinese/docs/introduction/index.html)
-- [基本概念](http://superRaytin.github.io/redux-saga-in-chinese/docs/basics/index.html)
-- [高级概念](http://superRaytin.github.io/redux-saga-in-chinese/docs/advanced/index.html)
-- [技巧](http://superRaytin.github.io/redux-saga-in-chinese/docs/recipes/index.html)
-- [外部资源](http://superRaytin.github.io/redux-saga-in-chinese/docs/ExternalResources.html)
-- [问题解答](http://superRaytin.github.io/redux-saga-in-chinese/docs/Troubleshooting.html)
-- [名词解释](http://superRaytin.github.io/redux-saga-in-chinese/docs/Glossary.html)
-- [API 参考](http://superRaytin.github.io/redux-saga-in-chinese/docs/api/index.html)
+- [介绍](/introduction/index.html)
+- [基本概念](/basics/index.html)
+- [高级概念](/advanced/index.html)
+- [技巧](/recipes/index.html)
+- [外部资源](/ExternalResources.html)
+- [问题解答](/Troubleshooting.html)
+- [名词解释](/Glossary.html)
+- [API 参考](/api/index.html)
 
 # 在浏览器中使用 umd 构建版本
 
@@ -217,4 +217,3 @@ npm run real-world
 - [Kevin He@kevinxh](https://github.com/kevinxh)
 
 **如果看到翻译不准确、句子不通顺的地方，欢迎随时指出。本文档翻译流程按照 [ETC 翻译规范](https://github.com/react-guide/ETC)，欢迎你来一起完善。**
-

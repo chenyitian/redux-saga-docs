@@ -25,4 +25,4 @@ runSaga(
 )
 ```
 
-欲了解更多信息请参见 [API 文档](http://leonshi.com/redux-saga-in-chinese/docs/api/index.html)。
+欲了解更多信息请参见 [API 文档](/api/index.html)。
